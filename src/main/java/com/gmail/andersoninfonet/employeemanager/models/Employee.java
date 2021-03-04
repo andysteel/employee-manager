@@ -35,6 +35,32 @@ public class Employee implements Serializable {
     private String employeeCode;
 
     /**
+     * 
+     */
+    public Employee() {
+    }
+
+    /**
+     * @param id
+     * @param name
+     * @param email
+     * @param jobTitle
+     * @param phone
+     * @param imageUrl
+     * @param employeeCode
+     */
+    public Employee(Long id, String name, String email, String jobTitle, String phone, String imageUrl,
+            String employeeCode) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.jobTitle = jobTitle;
+        this.phone = phone;
+        this.imageUrl = imageUrl;
+        this.employeeCode = employeeCode;
+    }
+
+    /**
      * @return the id
      */
     public Long getId() {
@@ -217,5 +243,4 @@ public class Employee implements Serializable {
                 + ", jobTitle=" + jobTitle + ", name=" + name + ", phone=" + phone + "]";
     }
 
-    
 }
