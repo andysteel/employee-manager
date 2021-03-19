@@ -28,7 +28,7 @@ public class Application implements Serializable {
     private String context;
 
     @Column(nullable = false)
-    private String url;
+    private String monitoringUrl;
 
     @Column(nullable = false)
     private Boolean isActive;
@@ -43,14 +43,14 @@ public class Application implements Serializable {
      * @param id
      * @param name
      * @param context
-     * @param url
+     * @param monitoringUrl
      * @param isActive
      */
-    public Application(Long id, String name, String context, String url, Boolean isActive) {
+    public Application(Long id, String name, String context, String monitoringUrl, Boolean isActive) {
         this.id = id;
         this.name = name;
         this.context = context;
-        this.url = url;
+        this.monitoringUrl = monitoringUrl;
         this.isActive = isActive;
     }
 
@@ -97,17 +97,17 @@ public class Application implements Serializable {
     }
 
     /**
-     * @return the url
+     * @return the monitoringUrl
      */
-    public String getUrl() {
-        return url;
+    public String getMonitoringUrl() {
+        return monitoringUrl;
     }
 
     /**
-     * @param url the url to set
+     * @param monitoringUrl the monitoringUrl to set
      */
-    public void setUrl(String url) {
-        this.url = url;
+    public void setMonitoringUrl(String monitoringUrl) {
+        this.monitoringUrl = monitoringUrl;
     }
 
     /**
@@ -136,7 +136,7 @@ public class Application implements Serializable {
         result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + ((isActive == null) ? 0 : isActive.hashCode());
         result = prime * result + ((name == null) ? 0 : name.hashCode());
-        result = prime * result + ((url == null) ? 0 : url.hashCode());
+        result = prime * result + ((monitoringUrl == null) ? 0 : monitoringUrl.hashCode());
         return result;
     }
 
@@ -173,10 +173,10 @@ public class Application implements Serializable {
                 return false;
         } else if (!name.equals(other.name))
             return false;
-        if (url == null) {
-            if (other.url != null)
+        if (monitoringUrl == null) {
+            if (other.monitoringUrl != null)
                 return false;
-        } else if (!url.equals(other.url))
+        } else if (!monitoringUrl.equals(other.monitoringUrl))
             return false;
         return true;
     }
@@ -187,8 +187,8 @@ public class Application implements Serializable {
     
     @Override
     public String toString() {
-        return "Application [context=" + context + ", id=" + id + ", isActive=" + isActive + ", name=" + name + ", url="
-                + url + "]";
+        return "Application [context=" + context + ", id=" + id + ", isActive=" + isActive + ", name=" + name + ", monitoringUrl="
+                + monitoringUrl + "]";
     }
     
     
